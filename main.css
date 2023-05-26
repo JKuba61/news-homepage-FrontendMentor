@@ -1,0 +1,255 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+a {
+  color: rgb(0, 0, 0);
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 1.6rem;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.section {
+  padding: 2em 1em 1em 1em;
+}
+
+.header {
+  position: fixed;
+  padding: 1em;
+  left: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateX(-50%);
+  background-color: #fff;
+}
+.header__logo {
+  font-weight: 900;
+}
+.header__btn {
+  padding: 1em 0.5em;
+  cursor: pointer;
+}
+.header__burger-btn, .header__burger-btn::before, .header__burger-btn::after {
+  content: "";
+  display: block;
+  width: 35px;
+  height: 5px;
+  border-radius: 3px;
+  margin: 0.5em 0;
+  background-color: rgb(0, 0, 0);
+}
+.header__burger-btn::after {
+  transform: translateY(-22px);
+}
+.header__burger-btn::before {
+  transform: translateY(10px);
+}
+
+.nav--mobile {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.nav--desktop {
+  display: none;
+}
+.nav__content {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  padding: 1em;
+  right: 0;
+  width: 70%;
+  height: 100%;
+  background-color: rgb(243, 241, 241);
+}
+.nav__btn {
+  align-self: flex-end;
+  padding: 1em 0.5em;
+  cursor: pointer;
+}
+.nav__close-btn, .nav__close-btn::after {
+  content: "";
+  display: block;
+  width: 35px;
+  height: 5px;
+  border-radius: 3px;
+  margin: 0.5em 0;
+  background-color: rgb(0, 0, 0);
+}
+.nav__close-btn {
+  transform: rotate(45deg);
+}
+.nav__close-btn::after {
+  transform: rotate(-90deg);
+}
+.nav__link {
+  list-style: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+.main {
+  padding-top: 4em;
+}
+.main .main-article__img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1em;
+}
+.main .main-article__title {
+  font-size: 4rem;
+}
+.main .main-article__description {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.main .main-article__description__info {
+  text-align: justify;
+  color: #555;
+  margin-bottom: 1em;
+}
+.main .main-article__description__btn {
+  padding: 1em 2em;
+  border: none;
+  background-color: hsl(0, 93%, 58%);
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.main .news {
+  margin-top: 3em;
+  padding: 1.5em 1em;
+  background-color: hsl(240, 100%, 5%);
+  color: #fff;
+}
+.main .news__header {
+  font-size: 3rem;
+  color: hsl(35, 77%, 62%);
+}
+.main .news__card {
+  margin-top: 2em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid rgb(109, 109, 109);
+}
+.main .news__card--last {
+  padding-bottom: 0em;
+  border-bottom: none;
+}
+.main .news__card__title {
+  margin-bottom: 0.5em;
+  font-size: 2rem;
+}
+.main .news__card__description {
+  color: #bbb;
+  font-size: 1.7rem;
+}
+
+.popular {
+  display: flex;
+  flex-direction: column;
+}
+.popular__card {
+  display: flex;
+  margin-bottom: 2em;
+}
+.popular__img {
+  width: 30%;
+  margin-right: 1em;
+}
+.popular__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.popular__number {
+  font-size: 2.4rem;
+  color: #aaa;
+}
+.popular__title {
+  font-size: 1.6rem;
+}
+.popular__description {
+  color: #999;
+}
+
+.hide {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header__btn {
+    display: none;
+  }
+  .nav--mobile {
+    display: none;
+  }
+  .nav--desktop {
+    display: flex;
+  }
+  .main {
+    display: flex;
+  }
+  .main .main-article {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 3em;
+  }
+  .main .main-article__img {
+    width: 100%;
+  }
+  .main .main-article__content {
+    display: flex;
+    gap: 4em;
+  }
+  .main .main-article__title, .main .main-article__description {
+    width: 50%;
+  }
+  .main .news {
+    margin-top: 0;
+    width: 50%;
+  }
+  .popular {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .popular__card {
+    margin-right: 2em;
+  }
+}
+@media (min-width: 998px) {
+  .main .main-article {
+    width: 70%;
+  }
+  .main .news {
+    width: 30%;
+  }
+}
+@media (min-width: 1200px) {
+  .header {
+    padding: 1em 0;
+  }
+}/*# sourceMappingURL=main.css.map */
